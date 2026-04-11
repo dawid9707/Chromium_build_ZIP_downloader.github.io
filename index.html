@@ -10,15 +10,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
         :root {
-            /* Tryb Jasny - Tonalności M3 Expressive */
+            /* Light - Material 3 Expressive */
             --md-sys-color-primary: #0061A4;
             --md-sys-color-on-primary: #FFFFFF;
             --md-sys-color-primary-container: #D1E4FF;
             --md-sys-color-on-primary-container: #001D36;
-            --md-sys-color-secondary: #535F70;
-            --md-sys-color-on-secondary: #FFFFFF;
-            --md-sys-color-secondary-container: #D7E3F7;
-            --md-sys-color-on-secondary-container: #101C2B;
             --md-sys-color-surface: #F8F9FF;
             --md-sys-color-on-surface: #1A1C1E;
             --md-sys-color-on-surface-variant: #43474E;
@@ -27,22 +23,18 @@
             --md-sys-color-surface-container-low: #F0F4F9;
             --md-sys-color-surface-container: #ECEFF4;
             --md-sys-color-surface-container-high: #E2E7EE;
-            --md-sys-color-surface-container-highest: #D7DCE4;
-            
+            --md-sys-color-surface-container-highest: #D7E3F4;
             --color-stable: #1E8E3E;
             --color-beta: #1A73E8;
             --color-dev: #9334E6;
         }
 
         [data-theme="dark"] {
+            /* Dark - Material 3 Expressive */
             --md-sys-color-primary: #A0C9FF;
             --md-sys-color-on-primary: #003258;
             --md-sys-color-primary-container: #00497D;
             --md-sys-color-on-primary-container: #D1E4FF;
-            --md-sys-color-secondary: #BBC7DB;
-            --md-sys-color-on-secondary: #253140;
-            --md-sys-color-secondary-container: #3E4759;
-            --md-sys-color-on-secondary-container: #D7E3F7;
             --md-sys-color-surface: #111318;
             --md-sys-color-on-surface: #E2E2E6;
             --md-sys-color-on-surface-variant: #C3C7CF;
@@ -52,31 +44,36 @@
             --md-sys-color-surface-container: #1E2025;
             --md-sys-color-surface-container-high: #282A2F;
             --md-sys-color-surface-container-highest: #33353A;
+            --color-stable: #81C995;
+            --color-beta: #8AB4F8;
+            --color-dev: #C58AF9;
         }
 
         [data-theme="oled"] {
+            /* OLED - Pure Black Material 3 */
             --md-sys-color-primary: #D1E4FF;
             --md-sys-color-on-primary: #000000;
-            --md-sys-color-primary-container: #003258;
+            --md-sys-color-primary-container: #00497D;
             --md-sys-color-on-primary-container: #D1E4FF;
-            --md-sys-color-secondary-container: #1A1C20;
-            --md-sys-color-on-secondary-container: #FFFFFF;
             --md-sys-color-surface: #000000;
             --md-sys-color-on-surface: #FFFFFF;
-            --md-sys-color-on-surface-variant: #8C9199;
-            --md-sys-color-outline: #444444;
+            --md-sys-color-on-surface-variant: #C3C7CF;
+            --md-sys-color-outline: #44474E;
             --md-sys-color-outline-variant: #222222;
             --md-sys-color-surface-container-low: #000000;
-            --md-sys-color-surface-container: #0A0A0A;
-            --md-sys-color-surface-container-high: #121212;
-            --md-sys-color-surface-container-highest: #1A1A1A;
+            --md-sys-color-surface-container: #111318;
+            --md-sys-color-surface-container-high: #1A1C20;
+            --md-sys-color-surface-container-highest: #282A2F;
+            --color-stable: #A8DAB5;
+            --color-beta: #ADCCFF;
+            --color-dev: #D7AEFB;
         }
 
         body {
             font-family: 'Google Sans', sans-serif;
             background-color: var(--md-sys-color-surface);
             color: var(--md-sys-color-on-surface);
-            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             margin: 0;
             display: flex;
             justify-content: center;
@@ -94,7 +91,8 @@
             flex-direction: column;
             gap: 32px;
             border: 1px solid var(--md-sys-color-outline-variant);
-            box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+            transition: background-color 0.3s;
         }
 
         .m3-header-badge {
@@ -102,55 +100,57 @@
             height: 84px;
             background-color: var(--md-sys-color-primary-container);
             color: var(--md-sys-color-on-primary-container);
-            border-radius: 32px;
+            border-radius: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .m3-header-badge:hover { transform: scale(1.08) rotate(4deg); }
-
         .icon-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             color: var(--md-sys-color-on-surface-variant);
             background-color: var(--md-sys-color-surface-container);
         }
-
-        .icon-btn:hover { 
+        
+        .icon-btn:hover {
             background-color: var(--md-sys-color-surface-container-highest);
             color: var(--md-sys-color-on-surface);
         }
 
-        .channel-grid {
+        .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 16px;
         }
 
-        .channel-card {
+        .m3-choice-card {
             background-color: var(--md-sys-color-surface-container);
-            border: 2px solid transparent;
+            border: 1px solid var(--md-sys-color-outline-variant);
             border-radius: 28px;
             padding: 24px;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
-        .channel-card:hover { background-color: var(--md-sys-color-surface-container-high); }
-        .channel-card.active {
+        .m3-choice-card.active {
             background-color: var(--md-sys-color-primary-container);
             border-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary-container);
+        }
+
+        .m3-choice-card:hover:not(.active) {
+            background-color: var(--md-sys-color-surface-container-high);
+            transform: translateY(-2px);
         }
 
         .m3-input-field {
@@ -160,13 +160,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            border-bottom: 2px solid var(--md-sys-color-outline);
-            transition: all 0.2s;
-        }
-
-        .m3-input-field:focus-within { 
-            border-bottom-color: var(--md-sys-color-primary);
-            background-color: var(--md-sys-color-surface-container-high);
+            border: 1px solid var(--md-sys-color-outline-variant);
         }
 
         .m3-input-field select {
@@ -175,16 +169,8 @@
             width: 100%;
             font-size: 16px;
             outline: none;
-            appearance: none;
             color: var(--md-sys-color-on-surface);
             cursor: pointer;
-            font-weight: 500;
-        }
-
-        .m3-input-field select option {
-            background-color: var(--md-sys-color-surface-container-highest);
-            color: var(--md-sys-color-on-surface);
-            padding: 12px;
         }
 
         .m3-btn {
@@ -199,543 +185,395 @@
             cursor: pointer;
             border: none;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .m3-btn:active { transform: scale(0.95); }
         .m3-btn-primary { 
             background-color: var(--md-sys-color-primary); 
             color: var(--md-sys-color-on-primary); 
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
-        .m3-btn-primary:hover { 
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-            filter: brightness(1.1);
-        }
-
-        .m3-accordion-item {
-            background-color: var(--md-sys-color-surface-container);
-            border-radius: 28px;
-            overflow: hidden;
-            border: 1px solid var(--md-sys-color-outline-variant);
+        
+        .m3-btn-primary:hover {
+            opacity: 0.9;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        .m3-accordion-trigger {
-            padding: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            user-select: none;
+        .m3-spinner {
+            width: 48px;
+            height: 48px;
+            border: 5px solid var(--md-sys-color-surface-container-highest);
+            border-top: 5px solid var(--md-sys-color-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
 
-        .m3-accordion-content {
-            max-height: 0;
-            padding: 0 24px;
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            overflow: hidden;
-        }
-
-        .m3-accordion-item.open .m3-accordion-content {
-            max-height: 500px;
-            padding-bottom: 24px;
-            opacity: 1;
-        }
-
-        .m3-accordion-item.open .expand-icon { transform: rotate(180deg); }
-
-        /* Modal Material 3 */
         .m3-dialog-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.6);
             display: none;
             align-items: center;
             justify-content: center;
             z-index: 1000;
             backdrop-filter: blur(12px);
         }
-
         .m3-dialog {
             background: var(--md-sys-color-surface-container-low);
-            padding: 32px;
-            border-radius: 36px;
+            padding: 24px;
+            border-radius: 32px;
             width: 90%;
             max-width: 440px;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.4);
             border: 1px solid var(--md-sys-color-outline-variant);
-            transform: scale(0.85);
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
-        .m3-dialog.show { transform: scale(1); opacity: 1; }
-
-        .lang-list-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 18px;
+        .lang-option {
+            padding: 16px 20px;
             border-radius: 20px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             transition: all 0.2s;
+            margin-bottom: 4px;
         }
-
-        .lang-list-item:hover { background: var(--md-sys-color-surface-container-highest); }
-        .lang-list-item.selected { 
+        .lang-option:hover { background: var(--md-sys-color-surface-container-highest); }
+        .lang-option.active { 
             background: var(--md-sys-color-primary-container); 
-            color: var(--md-sys-color-on-primary-container); 
-            font-weight: 700;
+            color: var(--md-sys-color-on-primary-container);
+            font-weight: 600;
         }
-
-        .m3-spinner {
-            width: 56px;
-            height: 56px;
-            border: 6px solid var(--md-sys-color-surface-container-highest);
-            border-top: 6px solid var(--md-sys-color-primary);
-            border-radius: 50%;
-            animation: m3spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-        }
-        @keyframes m3spin { 100% { transform: rotate(360deg); } }
-
-        .font-expressive { font-family: 'Google Sans', sans-serif; letter-spacing: -0.01em; }
     </style>
 </head>
 <body data-theme="light">
 
 <div id="langModal" class="m3-dialog-overlay" onclick="closeModal()">
-    <div class="m3-dialog" id="modalBox" onclick="event.stopPropagation()">
-        <h2 class="text-2xl font-expressive font-bold mb-6 flex items-center gap-3" id="modal-title">
-            <span class="material-symbols-outlined">language</span>
-            Wybierz język
-        </h2>
-        <div class="space-y-1" id="langGrid"></div>
-        <div class="mt-8 flex justify-end">
-            <button class="m3-btn !h-12 bg-[var(--md-sys-color-secondary-container)] px-8 rounded-full" onclick="closeModal()" id="ui-done-btn">Gotowe</button>
-        </div>
+    <div class="m3-dialog" onclick="event.stopPropagation()">
+        <h2 class="text-xl font-bold mb-4 px-2 pt-2" id="modal-title">Wybierz język</h2>
+        <div id="langList" class="space-y-1"></div>
     </div>
 </div>
 
 <main class="m3-expressive-card">
     <header class="flex justify-between items-start">
-        <div class="flex items-center gap-6">
+        <div class="flex items-center gap-4">
             <div class="m3-header-badge">
                 <span class="material-symbols-outlined text-4xl">download_for_offline</span>
             </div>
             <div>
-                <h1 class="text-4xl font-expressive font-bold leading-none mb-2" id="ui-title">Chromium Build</h1>
-                <p class="text-[var(--md-sys-color-on-surface-variant)] font-medium text-sm" id="ui-subtitle">Pobieranie snapshotów Chromium Windows x64.</p>
+                <h1 class="text-3xl font-bold" id="ui-title">Chromium Build</h1>
+                <p class="text-sm opacity-70" id="ui-subtitle">Pobieranie snapshotów Chromium.</p>
             </div>
         </div>
-        
-        <div class="flex gap-2 bg-[var(--md-sys-color-surface-container-low)] p-1 rounded-2xl border border-[var(--md-sys-color-outline-variant)]">
-            <button class="icon-btn" onclick="window.location.reload()" title="Odśwież">
-                <span class="material-symbols-outlined">sync</span>
-            </button>
-            <button class="icon-btn" onclick="openModal()" title="Język">
-                <span class="material-symbols-outlined">translate</span>
-            </button>
-            <button class="icon-btn" onclick="nextTheme()" title="Motyw">
-                <span class="material-symbols-outlined" id="theme-icon">light_mode</span>
-            </button>
+        <div class="flex gap-2">
+            <button class="icon-btn" onclick="openModal()"><span class="material-symbols-outlined">translate</span></button>
+            <button class="icon-btn" onclick="nextTheme()"><span class="material-symbols-outlined" id="theme-icon">light_mode</span></button>
         </div>
     </header>
 
     <section>
-        <label class="text-[11px] font-bold tracking-[0.1em] text-[var(--md-sys-color-primary)] uppercase mb-4 block px-1" id="ui-channel-label">Release Channel</label>
-        <div class="channel-grid">
-            <div class="channel-card active" id="card-stable" onclick="selectChannel('stable')">
-                <span class="material-symbols-outlined text-3xl" style="color: var(--color-stable)">verified</span>
-                <div>
-                    <div class="font-bold text-lg">Stable</div>
-                    <div class="text-xs opacity-60 font-mono version-label">...</div>
-                </div>
+        <label class="text-xs font-bold text-[var(--md-sys-color-primary)] uppercase mb-3 block" id="ui-platform-label">Platforma</label>
+        <div class="grid-layout">
+            <div class="m3-choice-card active" id="platform-Windows" onclick="selectPlatform('Windows')">
+                <span class="material-symbols-outlined text-2xl">desktop_windows</span>
+                <div class="font-bold">Windows (x64)</div>
             </div>
-            <div class="channel-card" id="card-beta" onclick="selectChannel('beta')">
-                <span class="material-symbols-outlined text-3xl" style="color: var(--color-beta)">science</span>
-                <div>
-                    <div class="font-bold text-lg">Beta</div>
-                    <div class="text-xs opacity-60 font-mono version-label">...</div>
-                </div>
+            <div class="m3-choice-card" id="platform-Linux" onclick="selectPlatform('Linux')">
+                <span class="material-symbols-outlined text-2xl">terminal</span>
+                <div class="font-bold">Linux (x64)</div>
             </div>
-            <div class="channel-card" id="card-dev" onclick="selectChannel('dev')">
-                <span class="material-symbols-outlined text-3xl" style="color: var(--color-dev)">terminal</span>
-                <div>
-                    <div class="font-bold text-lg">Dev</div>
-                    <div class="text-xs opacity-60 font-mono version-label">...</div>
-                </div>
+            <div class="m3-choice-card" id="platform-Mac" onclick="selectPlatform('Mac')">
+                <span class="material-symbols-outlined text-2xl">laptop_mac</span>
+                <div class="font-bold">Mac OS (x64)</div>
             </div>
         </div>
     </section>
 
     <section>
-        <label class="text-[11px] font-bold tracking-[0.1em] text-[var(--md-sys-color-primary)] uppercase mb-4 block px-1" id="ui-build-label">Build Selection</label>
+        <label class="text-xs font-bold text-[var(--md-sys-color-primary)] uppercase mb-3 block" id="ui-channel-label">Kanał Wydawniczy</label>
+        <div class="grid-layout">
+            <div class="m3-choice-card active" id="card-stable" onclick="selectChannel('stable')">
+                <span class="material-symbols-outlined text-2xl" style="color: var(--color-stable)">verified</span>
+                <div class="font-bold">Stable</div>
+                <div class="text-xs opacity-60 version-label">Czekaj...</div>
+            </div>
+            <div class="m3-choice-card" id="card-beta" onclick="selectChannel('beta')">
+                <span class="material-symbols-outlined text-2xl" style="color: var(--color-beta)">science</span>
+                <div class="font-bold">Beta</div>
+                <div class="text-xs opacity-60 version-label">Czekaj...</div>
+            </div>
+            <div class="m3-choice-card" id="card-dev" onclick="selectChannel('dev')">
+                <span class="material-symbols-outlined text-2xl" style="color: var(--color-dev)">terminal</span>
+                <div class="font-bold">Dev</div>
+                <div class="text-xs opacity-60 version-label">Czekaj...</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <label class="text-xs font-bold text-[var(--md-sys-color-primary)] uppercase mb-3 block" id="ui-build-label">Wybór wersji</label>
         <div class="m3-input-field">
-            <span class="material-symbols-outlined opacity-50">layers</span>
-            <select id="milestoneSelect">
-                <option value="" disabled selected id="ui-loading-text">Loading builds...</option>
+            <select id="milestoneSelect" onchange="updateUI()">
+                <option value="" disabled selected id="ui-loading-text">Ładowanie...</option>
             </select>
         </div>
     </section>
 
     <section id="resultArea">
-        <div id="statusMessage" class="py-12 flex flex-col items-center gap-6 opacity-60">
+        <div id="statusMessage" class="py-12 flex flex-col items-center gap-4">
             <div class="m3-spinner"></div>
-            <p class="text-sm font-medium tracking-wide" id="ui-sync-text">Syncing with Chromium Dash...</p>
+            <p class="text-sm font-medium" id="ui-sync-text">Synchronizacja...</p>
         </div>
 
-        <div id="downloadSection" class="bg-[var(--md-sys-color-surface-container-high)] rounded-[32px] p-8 hidden flex flex-col gap-8 border border-[var(--md-sys-color-outline-variant)]">
-            <div class="flex items-start justify-between">
+        <div id="downloadSection" class="bg-[var(--md-sys-color-surface-container-high)] rounded-3xl p-6 hidden flex flex-col gap-6">
+            <div class="flex justify-between items-end">
                 <div>
-                    <p class="text-[10px] font-bold tracking-widest uppercase text-[var(--md-sys-color-on-surface-variant)] mb-1" id="ui-id-label">Snapshot Build ID</p>
-                    <p id="basePositionText" class="text-5xl font-mono font-bold tracking-tight text-[var(--md-sys-color-primary)]">--</p>
+                    <p class="text-[10px] font-bold uppercase opacity-60 mb-1" id="ui-id-label">Snapshot Build ID</p>
+                    <p id="basePositionText" class="text-3xl font-mono font-bold text-[var(--md-sys-color-primary)]">--</p>
                 </div>
                 <div class="text-right">
-                    <span class="px-3 py-1 bg-[var(--md-sys-color-primary)] text-[var(--md-sys-color-on-primary)] text-[10px] font-bold rounded-full" id="ui-active-badge">ACTIVE SNAPSHOT</span>
-                    <p id="fullVersionTag" class="text-xs opacity-60 mt-2 font-mono">v--</p>
+                    <p id="fullVersionTag" class="text-lg font-bold">--</p>
                 </div>
             </div>
 
-            <a id="zipBtn" href="#" class="m3-btn m3-btn-primary w-full text-xl shadow-xl">
-                <span class="material-symbols-outlined text-2xl">download</span>
-                <span id="ui-download-btn">Pobierz Chromium (.ZIP)</span>
+            <a id="zipBtn" href="#" class="m3-btn m3-btn-primary w-full shadow-lg">
+                <span class="material-symbols-outlined">download</span>
+                <span id="ui-download-btn">Pobierz ZIP</span>
             </a>
         </div>
     </section>
 
-    <div class="m3-accordion-item" id="helpAccordion">
-        <div class="m3-accordion-trigger" onclick="toggleAccordion()">
-            <div class="flex items-center gap-4">
-                <div class="w-10 h-10 bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)] rounded-xl flex items-center justify-center">
-                    <span class="material-symbols-outlined">info</span>
-                </div>
-                <span class="font-bold text-sm tracking-wide uppercase" id="ui-accordion-title">Kanały Chromium</span>
-            </div>
-            <span class="material-symbols-outlined expand-icon transition-transform">expand_more</span>
-        </div>
-        <div class="m3-accordion-content" id="ui-accordion-content"></div>
-    </div>
-
-    <footer class="flex flex-wrap justify-center items-center gap-4 py-4">
-        <!-- Link do GitHub -->
-        <a href="https://github.com/dawid9707/Chromium_ZIP_Download" target="_blank" class="px-6 py-2 bg-[var(--md-sys-color-surface-container-highest)] rounded-full text-xs font-bold opacity-70 hover:opacity-100 transition-opacity flex items-center gap-2">
-             <svg viewBox="0 0 24 24" width="16" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
-             dawid9707
-        </a>
-        <!-- Link do strony Chromium -->
-        <a href="https://www.chromium.org" target="_blank" class="px-6 py-2 bg-[var(--md-sys-color-surface-container-highest)] rounded-full text-xs font-bold opacity-70 hover:opacity-100 transition-opacity flex items-center gap-2">
-             <span class="material-symbols-outlined text-base">public</span>
-             Chromium.org
-        </a>
+    <footer class="text-center opacity-40 text-[10px] mt-4">
+        <div>ChromiumDash & GCS API.</div>
+        <div id="refreshTime">Status: Aktywny</div>
     </footer>
 </main>
 
 <script>
-    const languages = [
-        { code: 'pl', name: 'Polski', flag: '🇵🇱' },
-        { code: 'en', name: 'English', flag: '🇺🇸' },
-        { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-        { code: 'es', name: 'Español', flag: '🇪🇸' },
-        { code: 'fr', name: 'Français', flag: '🇫🇷' },
-        { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-        { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
-        { code: 'zh', name: '中文', flag: '🇨🇳' }
-    ];
-
     const i18n = {
         pl: {
-            title: "Chromium Build", subtitle: "Pobieranie snapshotów Chromium Windows x64.",
-            channelLabel: "Kanał wydania", buildLabel: "Wybór kompilacji",
-            loading: "Pobieranie wersji...", sync: "Synchronizacja...",
-            idLabel: "Snapshot Build ID", downloadBtn: "Pobierz Chromium (.ZIP)",
-            refreshBtn: "Odśwież", accordionTitle: "Informacje o kanałach",
-            milestoneText: "Milestone", modalTitle: "Wybierz język", doneBtn: "Gotowe", activeBadge: "AKTYWNY SNAPSHOT",
-            channels: [
-                { name: "Stable", color: "var(--color-stable)", desc: "Przetestowane wersje do pracy." },
-                { name: "Beta", color: "var(--color-beta)", desc: "Podgląd nowości." },
-                { name: "Dev", color: "var(--color-dev)", desc: "Dla deweloperów." }
-            ]
+            langName: "Polski", title: "Chromium Build", subtitle: "Pobieranie snapshotów Chromium.",
+            platformLabel: "Platforma", channelLabel: "Kanał", buildLabel: "Wybierz wersję",
+            loading: "Szukanie plików...", sync: "Pobieranie wersji...",
+            idLabel: "Build ID", downloadBtn: "Pobierz Chromium (.ZIP)",
+            modalTitle: "Wybierz język", versionLabel: "Wersja:"
         },
         en: {
-            title: "Chromium Build", subtitle: "Downloading Chromium Windows x64 snapshots.",
-            channelLabel: "Release Channel", buildLabel: "Build Selection",
-            loading: "Loading versions...", sync: "Syncing...",
-            idLabel: "Snapshot Build ID", downloadBtn: "Download Chromium (.ZIP)",
-            refreshBtn: "Refresh", accordionTitle: "Channel Information",
-            milestoneText: "Milestone", modalTitle: "Select Language", doneBtn: "Done", activeBadge: "ACTIVE SNAPSHOT",
-            channels: [
-                { name: "Stable", color: "var(--color-stable)", desc: "Tested versions for daily use." },
-                { name: "Beta", color: "var(--color-beta)", desc: "Upcoming feature preview." },
-                { name: "Dev", color: "var(--color-dev)", desc: "Developer updates." }
-            ]
+            langName: "US English", title: "Chromium Build", subtitle: "Download Chromium snapshots.",
+            platformLabel: "Platform", channelLabel: "Channel", buildLabel: "Select Version",
+            loading: "Searching files...", sync: "Fetching versions...",
+            idLabel: "Build ID", downloadBtn: "Download Chromium (.ZIP)",
+            modalTitle: "Select Language", versionLabel: "Version:"
         },
         de: {
-            title: "Chromium Build", subtitle: "Herunterladen von Chromium Windows x64 Snapshots.",
-            channelLabel: "Release-Kanal", buildLabel: "Build-Auswahl",
-            loading: "Versionen werden geladen...", sync: "Synchronisierung...",
-            idLabel: "Snapshot-Build-ID", downloadBtn: "Chromium herunterladen (.ZIP)",
-            refreshBtn: "Aktualisieren", accordionTitle: "Kanalinformationen",
-            milestoneText: "Meilenstein", modalTitle: "Sprache wählen", doneBtn: "Fertig", activeBadge: "AKTIVER SNAPSHOT",
-            channels: [
-                { name: "Stable", color: "var(--color-stable)", desc: "Getestete Versionen." },
-                { name: "Beta", color: "var(--color-beta)", desc: "Vorschau auf neue Funktionen." },
-                { name: "Dev", color: "var(--color-dev)", desc: "Entwickler-Updates." }
-            ]
+            langName: "DE Deutsch", title: "Chromium Build", subtitle: "Chromium-Snapshots herunterladen.",
+            platformLabel: "Plattform", channelLabel: "Kanal", buildLabel: "Version wählen",
+            loading: "Dateien suchen...", sync: "Versionen abrufen...",
+            idLabel: "Build-ID", downloadBtn: "Chromium herunterladen (.ZIP)",
+            modalTitle: "Sprache wählen", versionLabel: "Version:"
         },
         es: {
-            title: "Chromium Build", subtitle: "Descarga de instantáneas de Chromium Windows x64.",
-            channelLabel: "Canal de lanzamiento", buildLabel: "Selección de compilación",
-            loading: "Cargando versiones...", sync: "Sincronizando...",
+            langName: "ES Español", title: "Chromium Build", subtitle: "Descargar instantáneas de Chromium.",
+            platformLabel: "Plataforma", channelLabel: "Canal", buildLabel: "Seleccionar versión",
+            loading: "Buscando archivos...", sync: "Obteniendo versiones...",
             idLabel: "ID de compilación", downloadBtn: "Descargar Chromium (.ZIP)",
-            refreshBtn: "Actualizar", accordionTitle: "Información del canal",
-            milestoneText: "Hito", modalTitle: "Seleccionar idioma", doneBtn: "Hecho", activeBadge: "SNAPSHOT ACTIVO",
-            channels: [
-                { name: "Stable", color: "var(--color-stable)", desc: "Versiones probadas." },
-                { name: "Beta", color: "var(--color-beta)", desc: "Vista previa de funciones." },
-                { name: "Dev", color: "var(--color-dev)", desc: "Actualizaciones de desarrolladores." }
-            ]
+            modalTitle: "Seleccionar idioma", versionLabel: "Versión:"
         },
         fr: {
-            title: "Chromium Build", subtitle: "Téléchargement de snapshots Chromium Windows x64.",
-            channelLabel: "Canal de diffusion", buildLabel: "Sélection de build",
-            loading: "Chargement...", sync: "Synchronisation...",
+            langName: "Français", title: "Chromium Build", subtitle: "Télécharger les snapshots Chromium.",
+            platformLabel: "Plateforme", channelLabel: "Canal", buildLabel: "Choisir la version",
+            loading: "Recherche de fichiers...", sync: "Récupération des versions...",
             idLabel: "ID de build", downloadBtn: "Télécharger Chromium (.ZIP)",
-            refreshBtn: "Actualiser", accordionTitle: "Infos sur les canaux",
-            milestoneText: "Jalon", modalTitle: "Choisir la langue", doneBtn: "Terminé", activeBadge: "SNAPSHOT ACTIF",
-            channels: [
-                { name: "Stable", color: "var(--color-stable)", desc: "Versions testées." },
-                { name: "Beta", color: "var(--color-beta)", desc: "Aperçu des nouveautés." },
-                { name: "Dev", color: "var(--color-dev)", desc: "Mises à jour développeurs." }
-            ]
+            modalTitle: "Choisir la langue", versionLabel: "Version:"
         },
         ru: {
-            title: "Chromium Build", subtitle: "Загрузка снимков Chromium для Windows x64.",
-            channelLabel: "Канал выпуска", buildLabel: "Выбор сборки",
-            loading: "Загрузка версий...", sync: "Синхронизация...",
-            idLabel: "Build ID", downloadBtn: "Скачать Chromium (.ZIP)",
-            refreshBtn: "Обновить", accordionTitle: "Информация о каналах",
-            milestoneText: "Milestone", modalTitle: "Выберите язык", doneBtn: "Готово", activeBadge: "АКТИВНЫЙ SNAPSHOT",
-            channels: [
-                { name: "Stable", color: "var(--color-stable)", desc: "Протестированные версии." },
-                { name: "Beta", color: "var(--color-beta)", desc: "Предварительный просмотр." },
-                { name: "Dev", color: "var(--color-dev)", desc: "Для разработчиков." }
-            ]
+            langName: "Русский", title: "Chromium Build", subtitle: "Скачать снапшоты Chromium.",
+            platformLabel: "Платформа", channelLabel: "Канал", buildLabel: "Выберите версию",
+            loading: "Поиск файлов...", sync: "Получение версий...",
+            idLabel: "ID сборки", downloadBtn: "Скачать Chromium (.ZIP)",
+            modalTitle: "Выберите язык", versionLabel: "Версия:"
         },
         hi: {
-            title: "Chromium Build", subtitle: "क्रोमियम विंडोज x64 स्नैपशॉट डाउनलोड करना।",
-            channelLabel: "रिलीज चैनल", buildLabel: "बिल्ड चयन",
-            loading: "लोड हो रहा है...", sync: "सिंक हो रहा है...",
-            idLabel: "Build ID", downloadBtn: "क्रोमियम डाउनलोड करें (.ZIP)",
-            refreshBtn: "रिफ्रेश", accordionTitle: "चैनल की जानकारी",
-            milestoneText: "Milestone", modalTitle: "भाषा चुनें", doneBtn: "हो गया", activeBadge: "सक्रिय स्नैपशॉट",
-            channels: [
-                { name: "Stable", color: "var(--color-stable)", desc: "परीक्षण किए गए संस्करण।" },
-                { name: "Beta", color: "var(--color-beta)", desc: "आगामी सुविधा पूर्वावलोकन।" },
-                { name: "Dev", color: "var(--color-dev)", desc: "डेवलपर अपडेट।" }
-            ]
+            langName: "हिन्दी", title: "Chromium Build", subtitle: "Chromium स्नैपशॉट डाउनलोड करें।",
+            platformLabel: "प्लेटफार्म", channelLabel: "चैनल", buildLabel: "संस्करण चुनें",
+            loading: "फ़ाइलें खोज रहे हैं...", sync: "संस्करण प्राप्त कर रहे हैं...",
+            idLabel: "बिल्ड आईडी", downloadBtn: "Chromium डाउनलोड करें (.ZIP)",
+            modalTitle: "भाषा चुनें", versionLabel: "संस्करण:"
         },
         zh: {
-            title: "Chromium Build", subtitle: "下载 Chromium Windows x64 快照。",
-            channelLabel: "发布渠道", buildLabel: "构建选择",
-            loading: "加载中...", sync: "同步中...",
-            idLabel: "Build ID", downloadBtn: "下载 Chromium (.ZIP)",
-            refreshBtn: "刷新", accordionTitle: "渠道信息",
-            milestoneText: "里程碑", modalTitle: "选择语言", doneBtn: "完成", activeBadge: "当前快照",
-            channels: [
-                { name: "Stable", color: "var(--color-stable)", desc: "经过测试的版本。" },
-                { name: "Beta", color: "var(--color-beta)", desc: "新功能预览。" },
-                { name: "Dev", color: "var(--color-dev)", desc: "开发者更新。" }
-            ]
+            langName: "中文", title: "Chromium Build", subtitle: "下载 Chromium 快照。",
+            platformLabel: "平台", channelLabel: "频道", buildLabel: "选择版本",
+            loading: "正在搜索文件...", sync: "正在获取版本...",
+            idLabel: "构建 ID", downloadBtn: "下载 Chromium (.ZIP)",
+            modalTitle: "选择语言", versionLabel: "版本:"
         }
     };
 
-    let currentLang = 'pl';
+    let currentLang = localStorage.getItem('chromium-lang') || 'pl';
     let currentTheme = 'light';
-    const themes = ['light', 'dark', 'oled'];
-    const themeIcons = { light: 'light_mode', dark: 'dark_mode', oled: 'contrast' };
-
-    const milestoneSelect = document.getElementById('milestoneSelect');
-    const downloadSection = document.getElementById('downloadSection');
-    const statusMessage = document.getElementById('statusMessage');
-    const basePositionText = document.getElementById('basePositionText');
-    const fullVersionTag = document.getElementById('fullVersionTag');
-    const zipBtn = document.getElementById('zipBtn');
-
-    let latestPosGlobal = 0;
-    let channelData = {};
-    let maxMilestone = 149;
+    let selectedPlatformId = 'Windows';
     let selectedChannelId = 'stable';
+    let channelData = {};
+    let snapshotCache = [];
+
+    const configMap = {
+        'Windows': { key: 'Win_x64', zip: 'chrome-win.zip', dash: 'Windows' },
+        'Linux': { key: 'Linux_x64', zip: 'chrome-linux.zip', dash: 'Linux' },
+        'Mac': { key: 'Mac', zip: 'chrome-mac.zip', dash: 'Mac' }
+    };
 
     function nextTheme() {
-        const idx = themes.indexOf(currentTheme);
-        currentTheme = themes[(idx + 1) % themes.length];
+        const themes = ['light', 'dark', 'oled'];
+        currentTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
         document.body.setAttribute('data-theme', currentTheme);
-        document.getElementById('theme-icon').textContent = themeIcons[currentTheme];
+        const icon = document.getElementById('theme-icon');
+        if(currentTheme === 'light') icon.textContent = 'light_mode';
+        else if(currentTheme === 'dark') icon.textContent = 'dark_mode';
+        else icon.textContent = 'brightness_high';
     }
 
     function openModal() {
-        const modal = document.getElementById('langModal');
-        const grid = document.getElementById('langGrid');
-        grid.innerHTML = '';
-        languages.forEach(l => {
+        const list = document.getElementById('langList');
+        list.innerHTML = '';
+        Object.keys(i18n).forEach(l => {
             const div = document.createElement('div');
-            div.className = `lang-list-item ${currentLang === l.code ? 'selected' : ''}`;
-            div.innerHTML = `<span class="text-2xl">${l.flag}</span> <span class="font-medium">${l.name}</span>`;
-            div.onclick = () => { currentLang = l.code; updateTranslation(); closeModal(); };
-            grid.appendChild(div);
+            div.className = `lang-option ${currentLang === l ? 'active' : ''}`;
+            div.innerHTML = `<span>${i18n[l].langName}</span> ${currentLang === l ? '<span class="material-symbols-outlined">check</span>' : ''}`;
+            div.onclick = () => { 
+                currentLang = l; 
+                localStorage.setItem('chromium-lang', l);
+                updateTranslation(); 
+                closeModal();
+                init();
+            };
+            list.appendChild(div);
         });
-        modal.style.display = 'flex';
-        setTimeout(() => {
-            const box = document.getElementById('modalBox');
-            if(box) box.classList.add('show');
-        }, 10);
+        document.getElementById('langModal').style.display = 'flex';
     }
 
-    function closeModal() {
-        const box = document.getElementById('modalBox');
-        if(box) box.classList.remove('show');
-        setTimeout(() => { document.getElementById('langModal').style.display = 'none'; }, 300);
-    }
-
-    function toggleAccordion() { document.getElementById('helpAccordion').classList.toggle('open'); }
+    function closeModal() { document.getElementById('langModal').style.display = 'none'; }
 
     function updateTranslation() {
-        const t = i18n[currentLang] || i18n['en'];
-        
-        const elements = {
-            'modal-title': (el) => el.innerHTML = `<span class="material-symbols-outlined">language</span> ${t.modalTitle}`,
-            'ui-done-btn': (el) => el.textContent = t.doneBtn,
-            'ui-title': (el) => el.textContent = t.title,
-            'ui-subtitle': (el) => el.textContent = t.subtitle,
-            'ui-channel-label': (el) => el.textContent = t.channelLabel,
-            'ui-build-label': (el) => el.textContent = t.buildLabel,
-            'ui-loading-text': (el) => el.textContent = t.loading,
-            'ui-sync-text': (el) => el.textContent = t.sync,
-            'ui-id-label': (el) => el.textContent = t.idLabel,
-            'ui-active-badge': (el) => el.textContent = t.activeBadge,
-            'ui-download-btn': (el) => el.textContent = t.downloadBtn,
-            'ui-accordion-title': (el) => el.textContent = t.accordionTitle,
-            'ui-accordion-content': (el) => el.innerHTML = t.channels.map(c => `
-                <div class="mb-4 last:mb-0">
-                    <div class="flex items-center gap-2 mb-1">
-                        <div class="w-2 h-2 rounded-full" style="background: ${c.color}"></div>
-                        <h3 class="font-bold text-sm">${c.name}</h3>
-                    </div>
-                    <p class="text-xs opacity-70">${c.desc}</p>
-                </div>
-            `).join('')
-        };
-
-        for (const [id, updateFn] of Object.entries(elements)) {
-            const el = document.getElementById(id);
-            if (el) updateFn(el);
-        }
-
-        if(latestPosGlobal > 0) renderMilestones();
+        const t = i18n[currentLang];
+        document.getElementById('ui-title').textContent = t.title;
+        document.getElementById('ui-subtitle').textContent = t.subtitle;
+        document.getElementById('ui-platform-label').textContent = t.platformLabel;
+        document.getElementById('ui-channel-label').textContent = t.channelLabel;
+        document.getElementById('ui-build-label').textContent = t.buildLabel;
+        document.getElementById('ui-sync-text').textContent = t.sync;
+        document.getElementById('ui-id-label').textContent = t.idLabel;
+        document.getElementById('ui-download-btn').textContent = t.downloadBtn;
+        document.getElementById('modal-title').textContent = t.modalTitle;
     }
 
-    function calculatePos(m) {
-        const diff = maxMilestone - parseInt(m);
-        return latestPosGlobal - (diff * 13200);
+    function selectPlatform(p) {
+        if(selectedPlatformId === p) return;
+        selectedPlatformId = p;
+        document.querySelectorAll('[id^="platform-"]').forEach(c => c.classList.remove('active'));
+        document.getElementById(`platform-${p}`).classList.add('active');
+        init();
     }
 
-    async function selectChannel(channel) {
-        selectedChannelId = channel;
-        document.querySelectorAll('.channel-card').forEach(card => card.classList.remove('active'));
-        const targetCard = document.getElementById(`card-${channel}`);
-        if(targetCard) targetCard.classList.add('active');
+    function selectChannel(ch) {
+        selectedChannelId = ch;
+        document.querySelectorAll('[id^="card-"]').forEach(c => c.classList.remove('active'));
+        document.getElementById(`card-${ch}`).classList.add('active');
+        populateSelect();
+    }
 
-        const data = channelData[channel];
-        if (data) {
-            const options = Array.from(milestoneSelect.options);
-            const match = options.find(o => o.dataset.m == data.milestone);
-            if (match) milestoneSelect.value = match.value;
+    async function resolveVersion(buildId) {
+        try {
+            const res = await fetch(`https://chromiumdash.appspot.com/fetch_version?build_id=${buildId}`);
+            const data = await res.json();
+            return data.version || `${channelData[selectedChannelId].milestone}.0.${buildId}.0`;
+        } catch {
+            return `${channelData[selectedChannelId]?.milestone || "133"}.0.${buildId}.0`;
         }
-        updateUI();
     }
 
     async function init() {
         updateTranslation();
+        const select = document.getElementById('milestoneSelect');
+        const status = document.getElementById('statusMessage');
+        const download = document.getElementById('downloadSection');
+
+        status.classList.remove('hidden');
+        download.classList.add('hidden');
+        select.innerHTML = `<option disabled selected>${i18n[currentLang].loading}</option>`;
+
         try {
-            const releaseRes = await fetch('https://chromiumdash.appspot.com/fetch_releases?platform=Windows&num=1');
-            const releases = await releaseRes.json();
-            
-            let detectedMax = 0;
+            const dashRes = await fetch(`https://chromiumdash.appspot.com/fetch_releases?platform=${configMap[selectedPlatformId].dash}&num=1`);
+            const releases = await dashRes.json();
             releases.forEach(r => {
                 const name = r.channel.toLowerCase();
-                if (name === 'canary') return; // Pomijamy Canary w danych kanałów
                 channelData[name] = { milestone: r.milestone, version: r.version };
-                if (r.milestone > detectedMax) detectedMax = r.milestone;
-            });
-            maxMilestone = detectedMax || 149;
-
-            const lastChangeRes = await fetch('https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Win_x64%2FLAST_CHANGE?alt=media');
-            latestPosGlobal = parseInt(await lastChangeRes.text());
-
-            ['stable', 'beta', 'dev'].forEach(ch => {
-                const data = channelData[ch] || { milestone: maxMilestone, version: 'N/A' };
-                const card = document.getElementById(`card-${ch}`);
-                if (card) {
-                    const label = card.querySelector('.version-label');
-                    if(label) label.textContent = data.version;
-                    card.dataset.milestone = data.milestone;
-                }
+                const label = document.querySelector(`#card-${name} .version-label`);
+                if(label) label.textContent = r.version;
             });
 
-            renderMilestones();
-            selectChannel('stable');
+            const storage = configMap[selectedPlatformId].key;
+            const storageRes = await fetch(`https://www.googleapis.com/storage/v1/b/chromium-browser-snapshots/o?delimiter=/&prefix=${storage}/&maxResults=150`);
+            const storageData = await storageRes.json();
+
+            if (storageData.prefixes) {
+                snapshotCache = storageData.prefixes
+                    .map(p => p.split('/')[1])
+                    .filter(id => id && !isNaN(id))
+                    .sort((a, b) => b - a);
+                
+                populateSelect();
+            }
         } catch (e) {
-            if(statusMessage) statusMessage.innerHTML = "<p class='text-red-500 font-bold'>Error loading Chromium metadata.</p>";
+            status.innerHTML = `<p class="text-red-500">Error: ${e.message}</p>`;
         }
     }
 
-    function renderMilestones() {
-        const t = i18n[currentLang] || i18n['en'];
-        const currentVal = milestoneSelect.value;
-        milestoneSelect.innerHTML = '';
+    async function populateSelect() {
+        const select = document.getElementById('milestoneSelect');
+        const t = i18n[currentLang];
+        select.innerHTML = `<option disabled selected>${t.sync}</option>`;
 
-        for(let i = 0; i < 35; i++) {
-            const m = maxMilestone - i;
-            const pos = calculatePos(m);
-            if (pos > latestPosGlobal) continue;
+        const targetM = channelData[selectedChannelId]?.milestone || "133";
+        const list = snapshotCache.slice(0, 30);
 
+        select.innerHTML = '';
+        for (const id of list) {
             const opt = document.createElement('option');
-            opt.value = pos;
-            opt.dataset.m = m;
-            let tags = "";
-            for (const [ch, data] of Object.entries(channelData)) {
-                if(data.milestone === m) tags += ` [${ch.toUpperCase()}]`;
-            }
-            opt.textContent = `${t.milestoneText} ${m}${tags} — ID: ${pos}`;
-            milestoneSelect.appendChild(opt);
+            opt.value = id;
+            opt.textContent = `${targetM}.0.${id}.0 (Build: ${id})`;
+            select.appendChild(opt);
         }
-        if(currentVal) milestoneSelect.value = currentVal;
+
+        updateUI();
+
+        for (let i = 0; i < Math.min(select.options.length, 12); i++) {
+            const opt = select.options[i];
+            const realV = await resolveVersion(opt.value);
+            opt.textContent = `${realV} (ID: ${opt.value})`;
+            if (i === 0) updateUI();
+        }
     }
 
     function updateUI() {
-        const build = milestoneSelect.value;
-        const opt = milestoneSelect.options[milestoneSelect.selectedIndex];
-        if (!opt) return;
+        const select = document.getElementById('milestoneSelect');
+        const buildId = select.value;
+        if (!buildId) return;
 
-        const milestone = opt.dataset.m;
-        let fullV = `v${milestone}.0.x.x`;
-        for (const data of Object.values(channelData)) {
-            if(data.milestone.toString() === milestone) fullV = data.version;
-        }
-
-        if(basePositionText) basePositionText.textContent = build;
-        if(fullVersionTag) fullVersionTag.textContent = fullV;
-        if(zipBtn) zipBtn.href = `https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Win_x64%2F${build}%2Fchrome-win.zip?alt=media`;
+        const opt = select.options[select.selectedIndex];
+        const config = configMap[selectedPlatformId];
         
-        if(downloadSection) downloadSection.classList.remove('hidden');
-        if(statusMessage) statusMessage.classList.add('hidden');
-    }
+        document.getElementById('basePositionText').textContent = buildId;
+        const versionPart = opt.textContent.split(' (')[0];
+        document.getElementById('fullVersionTag').textContent = versionPart;
 
-    milestoneSelect.onchange = () => {
-        document.querySelectorAll('.channel-card').forEach(c => c.classList.remove('active'));
-        updateUI();
-    };
+        document.getElementById('zipBtn').href = `https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/${config.key}%2F${buildId}%2F${config.zip}?alt=media`;
+        
+        document.getElementById('statusMessage').classList.add('hidden');
+        document.getElementById('downloadSection').classList.remove('hidden');
+    }
 
     window.onload = init;
 </script>
